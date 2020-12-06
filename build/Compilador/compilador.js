@@ -1,6 +1,6 @@
 "use strict";
-var canal = 'Gaveta';
-var inscritos = 610234;
+let canal = 'Gaveta';
+let inscritos = 610234;
 // canal = inscritos;
 console.log(canal);
 // let nome = 'Pedro'; -> dupla declaração da mesma variável no mesmo escopo;

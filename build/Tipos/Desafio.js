@@ -1,5 +1,5 @@
 "use strict";
-var funcionario = {
+let funcionario = {
     Servidores: [],
     BaterPonto: function (ponto) {
         return ponto > 8 ? 'Atrasado' : 'Dentro do horário';

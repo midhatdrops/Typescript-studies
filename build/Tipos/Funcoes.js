@@ -1,6 +1,6 @@
 "use strict";
 // funções
-var myname = 'Bruno';
+const myname = 'Bruno';
 function ReturnName() {
     return myname;
 }
@@ -17,18 +17,18 @@ function Multiplicar(numA, numB, numC) {
 }
 Multiplicar(2, 3, 4);
 //Armazenando uma função em uma constante
-var Soma = function (numA, numB) {
+const Soma = function (numA, numB) {
     return numA + numB;
 };
 console.log(Soma(2, 3));
 //tipo função
-var subtracao; // define a tipagem antes da função
-subtracao = function (numA, numB) { return numB - numA; };
+let subtracao; // define a tipagem antes da função
+subtracao = (numA, numB) => numB - numA;
 subtracao = function (numA, numB) {
     return numB - numA;
 };
 //objetos
-var usuario = {
+let usuario = {
     nome: 'Joao',
     idade: 22,
 };

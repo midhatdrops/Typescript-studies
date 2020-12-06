@@ -1,13 +1,13 @@
 "use strict";
-var VerificarAtraso = {
+let VerificarAtraso = {
     Servidores: [],
     BaterPonto: function (ponto) {
         return ponto > 8 ? 'Atrasado' : 'Dentro do horário';
     },
 };
-var VerificarAlmoco = {
+let VerificarAlmoco = {
     Servidores: ['Ana', 'Paulo'],
-    BaterPonto: function (horario) {
+    BaterPonto: (horario) => {
         return horario == 12 ? 'Dentro do horário' : 'Fora do horário';
     },
 };
