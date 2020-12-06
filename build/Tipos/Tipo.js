@@ -61,3 +61,4 @@ var produto = {
     },
 };
 produto.ValidarProduto();
+//# sourceMappingURL=Tipo.js.map

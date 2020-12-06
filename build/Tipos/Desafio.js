@@ -9,3 +9,4 @@ funcionario.Servidores = ['Ana', 'João', 'Marcelo'];
 console.log(funcionario.Servidores);
 console.log(funcionario.BaterPonto(2));
 console.log(funcionario.BaterPonto(9));
+//# sourceMappingURL=Desafio.js.map

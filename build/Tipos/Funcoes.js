@@ -36,3 +36,4 @@ usuario = { nome: 'Bruno', idade: 23 };
 usuario = { idade: 31, nome: 'Maria' }; // ordem inversa tbm vale
 // usuario = {batata: false} -> Errado
 // usuario = {} -> Errado
+//# sourceMappingURL=Funcoes.js.map

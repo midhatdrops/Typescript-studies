@@ -13,3 +13,4 @@ console.log(canal);
 //   isManha ? (saudacao = 'Bom dia') : (saudacao = '');
 //   return saudacao;
 // } // -> Erro do tipo "StrictNullCheck", "noUnusedParameter", "noUnusedLocal"
+//# sourceMappingURL=compilador.js.map

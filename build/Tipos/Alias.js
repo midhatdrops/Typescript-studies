@@ -11,3 +11,4 @@ var VerificarAlmoco = {
         return horario == 12 ? 'Dentro do horário' : 'Fora do horário';
     },
 };
+//# sourceMappingURL=Alias.js.map
