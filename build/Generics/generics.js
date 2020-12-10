@@ -33,4 +33,122 @@ imprimir(["Ana", "Bia", "Carlos"]);
 imprimir([{ nome: "paulo", idade: 27 }]);
 const ChamarEco = echoMelhorado;
 console.log(ChamarEco("Alguma coisa"));
+//Class com Generics
+class OperacaoBinaria {
+    constructor(operando1, operando2) {
+        this.operando1 = operando1;
+        this.operando2 = operando2;
+    }
+}
+// console.log(new OperacaoBinaria("Bom ", "dia").executar());
+// console.log(new OperacaoBinaria(1, 2).executar());
+class SomaBinaria extends OperacaoBinaria {
+    executar() {
+        return this.operando1 + this.operando2;
+    }
+}
+console.log(new SomaBinaria(2, 3).executar());
+class DiferencaEntreDatas extends OperacaoBinaria {
+    GetTime(data) {
+        let { dia, mes, ano } = data;
+        return new Date(`${mes}/${dia}/${ano}`).getTime();
+    }
+    executar() {
+        const t1 = this.GetTime(this.operando1);
+        const t2 = this.GetTime(this.operando2);
+        const diferenca = Math.abs(t1 - t2);
+        const dia = 1000 * 60 * 60 * 24;
+        return `${Math.ceil(diferenca / dia)} dia(s)`;
+    }
+}
+const d1 = new Data(1, 2, 2000);
+const d2 = new Data(5, 2, 2000);
+console.log(new DiferencaEntreDatas(d1, d2).executar());
+//Desafio Fila
+class Fila {
+    constructor(...args) {
+        this.Fila = [];
+        this.Fila = args;
+    }
+    Entrar(elemento) {
+        return this.Fila.push(elemento);
+    }
+    Proximo() {
+        if (this.Fila.length >= 0 && this.Fila[0]) {
+            const primeiro = this.Fila[0];
+            this.Fila.splice(0, 1);
+            return primeiro;
+        }
+        else {
+            return null;
+        }
+    }
+    Imprimir() {
+        return console.log(this.Fila);
+    }
+}
+const fila = new Fila("João", "Maria", "José");
+fila.Imprimir();
+fila.Entrar("Pedro");
+console.log(fila.Proximo());
+fila.Imprimir();
+console.log(fila.Proximo());
+fila.Imprimir();
+// Constrains
+class Fila2 {
+    constructor(...args) {
+        // o T só pode ser number ou string e seus sub-tipos
+        this.Fila = [];
+        this.Fila = args;
+    }
+    Entrar(elemento) {
+        return this.Fila.push(elemento);
+    }
+    Proximo() {
+        if (this.Fila.length >= 0 && this.Fila[0]) {
+            const primeiro = this.Fila[0];
+            this.Fila.splice(0, 1);
+            return primeiro;
+        }
+        else {
+            return null;
+        }
+    }
+    Imprimir() {
+        return console.log(this.Fila);
+    }
+}
+class Mapa {
+    constructor() {
+        this.itens = new Array();
+    }
+    obter(Chave) {
+        const resultado = this.itens.filter((i) => i.Chave === Chave);
+        return resultado ? resultado[0] : null;
+    }
+    colocar(par) {
+        const encontrado = this.obter(par.Chave);
+        if (encontrado) {
+            encontrado.Valor = par.Valor;
+        }
+        else {
+            this.itens.push(par);
+        }
+    }
+    limpar() {
+        this.itens = new Array();
+    }
+    imprimir() {
+        console.log(this.itens);
+    }
+}
+const mapa = new Mapa();
+mapa.colocar({ Chave: 1, Valor: "Pedro" });
+mapa.colocar({ Chave: 2, Valor: "Rebeca" });
+mapa.colocar({ Chave: 3, Valor: "Maria" });
+mapa.colocar({ Chave: 1, Valor: "Gustavo" });
+console.log(mapa.obter(2));
+mapa.imprimir();
+mapa.limpar();
+mapa.imprimir();
 //# sourceMappingURL=generics.js.map
